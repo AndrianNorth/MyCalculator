@@ -15,22 +15,32 @@ public class Calculator implements ButtonService{
     }
 
     @Override
-    public void ButtonEvenClicked(@NonNull String even) {
+    public void ButtonEvenClicked() {
 
     }
 
     @Override
-    public void ButtonMemoryAddClicked(@NonNull String memory) {
+    public void ButtonBackspaceClicked() {
 
     }
 
     @Override
-    public void ButtonMemoryRemoveClicked(@NonNull String memory) {
+    public void ButtonClearClicked() {
 
     }
 
     @Override
-    public void ButtonMemoryClearClicked(@NonNull String memory) {
+    public void ButtonMemoryAddClicked() {
+
+    }
+
+    @Override
+    public void ButtonMemoryRemoveClicked() {
+
+    }
+
+    @Override
+    public void ButtonMemoryClearClicked() {
 
     }
 
