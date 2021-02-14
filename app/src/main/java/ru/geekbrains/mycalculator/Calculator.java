@@ -1,46 +1,73 @@
 package ru.geekbrains.mycalculator;
 
-import androidx.annotation.NonNull;
+public class Calculator implements ButtonService {
 
-public class Calculator implements ButtonService{
+    double num1 = 0;
+    double num2 = 0;
+    double result = 0;
+    String operand = null;
 
     @Override
-    public void ButtonNumberClicked(@NonNull String number) {
+    public void buttonNumberClicked(String number) {
+        MainActivity.textView.append(number);
+    }
+
+    @Override
+    public void buttonOperandClicked(String op) {
+        num1 = Double.parseDouble(getResult());
+        operand = op;
+        MainActivity.textView.setText("");
+    }
+
+    @Override
+    public void buttonEvenClicked() {
+        num2 = Double.parseDouble(getResult());
+        switch (operand) {
+            case ("-"):
+                result = num1 - num2;
+                MainActivity.textView.setText(Double.toString(result));
+                break;
+            case ("+"):
+                result = num1 + num2;
+                MainActivity.textView.setText(Double.toString(result));
+                break;
+            case ("*"):
+                result = num1 * num2;
+                MainActivity.textView.setText(Double.toString(result));
+                break;
+            case ("/"):
+                result = num1 / num2;
+                MainActivity.textView.setText(Double.toString(result));
+                break;
+            case ("%"):
+                break;
+        }
+    }
+
+    @Override
+    public void buttonBackspaceClicked() {
 
     }
 
     @Override
-    public void ButtonOperandClicked(@NonNull String operand) {
+    public void buttonClearClicked() {
+        operand = null;
+        result = 0;
+        MainActivity.textView.setText("");
+    }
+
+    @Override
+    public void buttonMemoryAddClicked() {
 
     }
 
     @Override
-    public void ButtonEvenClicked() {
+    public void buttonMemoryRemoveClicked() {
 
     }
 
     @Override
-    public void ButtonBackspaceClicked() {
-
-    }
-
-    @Override
-    public void ButtonClearClicked() {
-
-    }
-
-    @Override
-    public void ButtonMemoryAddClicked() {
-
-    }
-
-    @Override
-    public void ButtonMemoryRemoveClicked() {
-
-    }
-
-    @Override
-    public void ButtonMemoryClearClicked() {
+    public void buttonMemoryClearClicked() {
 
     }
 
@@ -51,6 +78,6 @@ public class Calculator implements ButtonService{
 
     @Override
     public String getResult() {
-        return null;
+        return MainActivity.textView.getText().toString();
     }
 }
