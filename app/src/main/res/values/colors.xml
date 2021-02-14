@@ -8,6 +8,6 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="special_buttons">#1d394c</color>
-    <color name="even_button">#49c7ff</color>
-    <color name="upper_buttons">#85919c</color>
+    <color name="neon_blue">#49c7ff</color>
+    <color name="memory_buttons">#85919c</color>
 </resources>
